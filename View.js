@@ -1,8 +1,4 @@
 function View() {
-    // var navmenu = document.getElementById("navmenu");
-    // var main = document.getElementById("mainNav");
-    // var map = document.getElementById("mapNav");
-
     var menuSection = document.getElementById("menusection");
     var mainSection = document.getElementById("mainsection");
     var favouriteSection = document.getElementById("nav");
@@ -13,8 +9,6 @@ function View() {
 
     this.init = function(callback) {
 
-
-
         var start = function(){
             startsection.hidden=false;
             menuSection.hidden = true;
@@ -23,7 +17,6 @@ function View() {
             reviewSection.hidden = true;
             backToMapButton.hidden = true;
         };
-
 
         var showHome = function(){
             startsection.hidden = true;
@@ -35,7 +28,6 @@ function View() {
         };
 
         startsection.addEventListener("click", showHome);
-
         document.getElementById('home').addEventListener("click", function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
@@ -112,7 +104,6 @@ function View() {
         favouriteSection.hidden = false;
         reviewSection.hidden = false;
         backToMapButton.hidden = false;
-
     };
 
     // Navigation
@@ -122,5 +113,4 @@ function View() {
             window.location.href = url;
         };
     };
-
 }

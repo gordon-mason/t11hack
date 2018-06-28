@@ -8,12 +8,7 @@ function Database() {
                 category: "Japanese",
                 starRating: 5,
                 speed: 10,
-                reviews: [
-                    {
-                    	user:'bob',
-                        starRating: 4,
-                        description: "Great!"}
-                ]
+                reviews: []
             }, {
             	name: "Bar-burrito",
                 latitude: 55.860884,
@@ -40,14 +35,7 @@ function Database() {
                 category: "Buffet",
                 starRating: 3,
                 speed: 3,
-                reviews: [
-                    {user:'bob',
-                        starRating: 4,
-                        description: "Great!"},
-                    {user:'dombro',
-                        starRating: 4,
-                        description: "not really!"}
-                ]
+                reviews: []
 			}, {
             	name: "The grill on the Corner",
                 latitude: 55.860917,
@@ -96,7 +84,7 @@ function Database() {
         restaurants.restaurants.forEach(function(rest) {
         	if(review.name === rest.name) {
         		rest.reviews.push({
-					user: "bob",
+					user: "anonymous",
                     starRating: review.rating,
                     description: review.comment
         		});
