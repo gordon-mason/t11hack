@@ -16,6 +16,7 @@ function initialise() {
             ]
         }]
     };
+
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
     google.maps.event.addListener(map, 'click', function(event) {
