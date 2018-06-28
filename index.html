@@ -3,6 +3,7 @@
   <title>Application</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" type="text/css" href="app.css"/>
 </head>
 <body>
 <header>L(a)unch</header>
@@ -21,6 +22,7 @@
 <script src="View.js"></script>
 <script src="Controller.js"></script>
 <script src="map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDdZRfdGzZFrbiTjAUJ3JCtJPEhoywY2s&callback=initialise"></script>
 <script>
     function initialise() {
         var myLatlng = new google.maps.LatLng(55.8617, -4.2417);
@@ -42,7 +44,6 @@
         });
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDdZRfdGzZFrbiTjAUJ3JCtJPEhoywY2s&callback=initialise"></script>
 </body>
 </html>
 
