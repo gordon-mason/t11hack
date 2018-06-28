@@ -6,16 +6,13 @@
   <link rel="icon" sizes="192x192" href="pizza.jpg"/>
   <link rel="apple-touch-icon" href="pizza.jpg"/>
   <link rel="shortcut icon" href="pizza.jpg" type="image/x-icon"/>
-  <link rel="stylesheet" type="text/css" href="app.css"/>
-    <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/app.css"/>
 </head>
 <body>
 <header>L(a)unch</header>
 
-<section id="mainsection" class="mainsection">
-  <div id="map"></div>
-</section>
-
+<!--This is the tiles menu-->
 <section id="menusection" class="menusection" hidden>
   <img src="http://via.placeholder.com/400x400" />
   <img src="http://via.placeholder.com/400x400" />
@@ -25,6 +22,29 @@
   <img src="http://via.placeholder.com/400x400" />
 </section>
 
+
+<!--This is the map section-->
+<section id="mainsection" class="mainsection">
+  <div id="map"></div>
+</section>
+
+<!--This is the review section -->
+<section id="reviewSection" hidden>
+  <div id="reviewHeader">
+      Reviews for <i id="restaurantName">Panko</i>
+  </div>
+  <div id="starRating" />
+  <div id="reviews">
+    <div>
+      <img src="http://via.placeholder.com/150x150" />
+      <h3>Great food</h3>
+      <p>I really like this </p>
+    </div>
+  </div>
+</section>
+
+
+<!--This is the favourites bar - bottom of the page-->
 <nav id="nav">
   <div id="favourite1">Symphony</div>
   <div id="favourite2">Ratings</div>
