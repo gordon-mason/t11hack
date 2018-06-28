@@ -8,7 +8,7 @@ function View() {
     var favouriteSection = document.getElementById("nav");
     var reviewSection = document.getElementById('reviewSection');
 
-    this.init = function(callback) {
+    this.init = function() {
         document.getElementById('home').addEventListener("click", function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
@@ -63,7 +63,6 @@ function View() {
 
     };
 
-
     // Navigation
     this.goToFunction = function(url) {
         return function () {
@@ -71,7 +70,5 @@ function View() {
             window.location.href = url;
         };
     };
-
-
 
 }
