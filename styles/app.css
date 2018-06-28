@@ -131,6 +131,10 @@ section{
     text-align: center;
 }
 
+#reviewHeader {
+    font-size: 1.5rem;
+}
+
 .reviewCard {
     width: 80%;
     margin: 1% 8% 1% 8%;
@@ -139,4 +143,14 @@ section{
     -webkit-border-radius: 2rem;
     -moz-border-radius: 2rem;
     border-radius: 2rem;
+}
+
+.reviewSection {
+    overflow: auto;
+    max-height: 80%;
+    position:fixed;
+}
+
+#starRating {
+    margin:5%;
 }

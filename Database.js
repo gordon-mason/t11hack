@@ -8,7 +8,11 @@ function Database() {
                 category: "Japanese",
                 starRating: 5,
                 speed: 10,
-                reviews: []
+                reviews: [{
+                    user: "bob",
+                    starRating: 5,
+                    description: "good"
+                }]
             }, {
             	name: "Bar-burrito",
                 latitude: 55.860884,
@@ -84,7 +88,7 @@ function Database() {
         restaurants.restaurants.forEach(function(rest) {
         	if(review.name === rest.name) {
         		rest.reviews.push({
-					user: "anonymous",
+					user: "JPMorgan Employee",
                     starRating: review.rating,
                     description: review.comment
         		});

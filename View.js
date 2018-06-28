@@ -6,6 +6,9 @@ function View() {
     var backToMapButton = document.getElementById('backToMap');
     var IDsection = document.getElementById("idsection");
     var startsection = document.getElementById("startsection");
+    var starElement = document.getElementById('starRating');
+    var ratingMsg = document.getElementById('ratingMsg');
+
     //componentsToHide holds a reference to all components
     var componentsToHide = [menuSection, mainSection, favouriteSection, reviewSection, backToMapButton, IDsection, startsection];
     //viewMap holds a reference to all of the components to show for each view
@@ -43,6 +46,7 @@ function View() {
                 rating: formData.get("rating"),
                 comment: formData.get("comment")
             });
+            document.getElementById("comment").value = "";
         });
 
         //show the start page
@@ -61,8 +65,8 @@ function View() {
         if (restaurant.reviews) {
             restaurant.reviews.forEach(function (x) {
                 reviews += '<div class="panel panel-default">\n' +
-                    '      <h3> username: ' + x.user + '</h3>\n' +
-                    '      <p> comment: ' + x.description + '</p>\n' +
+                    '      <h4>' + x.user + '</h4>\n' +
+                    '      <p> ' + x.description + '</p>\n' +
                     '    </div>'
             });
         } else {
@@ -73,8 +77,8 @@ function View() {
         //show the star rating and restaurant name:
         document.getElementById('restaurantName').innerHTML = restaurantName;
         var i = 0;
-        var starElement = document.getElementById('starRating');
         starElement.innerHTML = '';
+        this.updateRating(restaurant);
         while (i < restaurant.starRating) {
             starElement.innerHTML += '<i class="fas fa-star fa-2x"></i>';
             i++;
@@ -86,4 +90,20 @@ function View() {
         reviewSection.hidden = false;
         backToMapButton.hidden = false;
     };
+
+    this.updateRating = function(restaurant) {
+        var reviewNumber = restaurant.reviews.length;
+        var newRating = 0;
+        var reviews;
+        if(reviewNumber === 0) {
+            restaurant.starRating = 0;
+            ratingMsg.innerHTML = "There are currently no reviews. Be the first to leave a review.";
+        } else {
+            reviews = restaurant.reviews.forEach(function(review) {
+                newRating += parseInt(review.starRating);
+            });
+            restaurant.starRating = newRating/reviewNumber;
+            ratingMsg.innerHTML = "Based on " + reviewNumber + " reviews";
+        }
+    }
 }
