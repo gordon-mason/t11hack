@@ -31,13 +31,21 @@ function View() {
             if (x.name === restaurantName) {restaurant = x }
         } );
         //create a review div for each review
-        restaurant.reviews.forEach(function(x){
-            reviews += '<div>\n' +
-                '      <h3>' + x.user +'</h3>\n' +
-                '      <p>' + x.description +  '</p>\n' +
-                '    </div>'
-        });
+        if (restaurant.reviews) {
+            restaurant.reviews.forEach(function (x) {
+                reviews += '<div>\n' +
+                    '      <h3>' + x.user + '</h3>\n' +
+                    '      <p>' + x.description + '</p>\n' +
+                    '    </div>'
+            });
+        } else {
+            reviews = 'No reviews, yet';
+        }
+        //show the reviews
         document.getElementById('reviews').innerHTML = reviews;
+        //show the star rating and restaurant name:
+        document.getElementById('restaurantName').innerHTML = restaurantName;
+        document.getElementById('starRating').innerHTML = restaurant.starRating + '/5 stars';
         menuSection.hidden = true;
         mainSection.hidden = true;
         favouriteSection.hidden = false;
