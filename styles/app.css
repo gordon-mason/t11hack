@@ -111,3 +111,21 @@ section{
     left: 0.8rem;
     top: 0.25rem;
 }
+
+#starRating {
+    color: yellow;
+}
+
+#reviews {
+    text-align: center;
+}
+
+.reviewCard {
+    width: 80%;
+    margin: 1% 8% 1% 8%;
+    height: auto;
+    border: solid gray 2px;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+}

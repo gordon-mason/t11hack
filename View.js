@@ -21,7 +21,7 @@ function View() {
         document.getElementById('home').addEventListener("click", function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
-            favouriteSection.hidden = true;
+            //favouriteSection.hidden = true;
             reviewSection.hidden = true;
             backToMapButton.hidden = true;
         });
@@ -46,7 +46,7 @@ function View() {
         //create a review div for each review
         if (restaurant.reviews) {
             restaurant.reviews.forEach(function (x) {
-                reviews += '<div>\n' +
+                reviews += '<div class="reviewCard">\n' +
                     '      <h3> username: ' + x.user + '</h3>\n' +
                     '      <p> comment: ' + x.description + '</p>\n' +
                     '    </div>'
@@ -58,7 +58,13 @@ function View() {
         document.getElementById('reviews').innerHTML = reviews;
         //show the star rating and restaurant name:
         document.getElementById('restaurantName').innerHTML = restaurantName;
-        document.getElementById('starRating').innerHTML = restaurant.starRating + '/5 stars';
+        var i = 0;
+        var starElement = document.getElementById('starRating');
+        starElement.innerHTML = '';
+        while (i < restaurant.starRating) {
+            starElement.innerHTML += '<i class="fas fa-star fa-2x"></i>';
+            i++;
+        }
         //hide other things and show reviews
         menuSection.hidden = true;
         mainSection.hidden = true;
