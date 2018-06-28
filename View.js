@@ -32,8 +32,13 @@ function View() {
             mainSection.hidden = false;
             favouriteSection.hidden = false;
         });
+        document.getElementById('submit').addEventListener("click", function(e) {
+            e.preventDefault();
+            const formData = new FormData(document.querySelector("form"));
+            console.log(formData.get("rating"));
+            console.log(formData.get("comment"));
+        });
     };
-
 
     this.showReviews = function(restaurantName){
         var data = globalDatabase.getRestaurantsNearGlasgow();
