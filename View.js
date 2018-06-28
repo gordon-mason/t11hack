@@ -8,16 +8,35 @@ function View() {
     var favouriteSection = document.getElementById("nav");
     var reviewSection = document.getElementById('reviewSection');
     var backToMapButton = document.getElementById('backToMap');
+    var IDsection = document.getElementById("idsection");
+    var startsection = document.getElementById("startsection");
 
 
     this.init = function(callback) {
+
+
+
+        var start = function(){
+            startsection.hidden=false;
+            menuSection.hidden = true;
+            mainSection.hidden = true;
+            favouriteSection.hidden = true;
+            reviewSection.hidden = true;
+            backToMapButton.hidden = true;
+        };
+
+
         var showHome = function(){
+            startsection.hidden = true;
             menuSection.hidden = true;
             mainSection.hidden = false;
             favouriteSection.hidden = false;
             reviewSection.hidden = true;
             backToMapButton.hidden = true;
         };
+
+        startsection.addEventListener("click", showHome);
+
         document.getElementById('home').addEventListener("click", function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
@@ -38,6 +57,21 @@ function View() {
             console.log(formData.get("rating"));
             console.log(formData.get("comment"));
         });
+
+        document.getElementById('ID').addEventListener("click", function(){
+            idSection.hidden = false;
+            mainSection.hidden = true;
+            //favouriteSection.hidden = true;
+            reviewSection.hidden = true;
+            backToMapButton.hidden = true;
+        });
+        document.getElementById('backToMap').addEventListener("click", showHome);
+        document.getElementById('imageID').addEventListener("click", function(){
+            idSection.hidden = true;
+            mainSection.hidden = false;
+            favouriteSection.hidden = false;
+        });
+        start();
     };
 
     this.showReviews = function(restaurantName){
