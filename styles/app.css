@@ -21,7 +21,7 @@ html, body {
 }
 
 header, footer{
-    background-color: black;
+    background-color: blue;
     color: white;
 }
 header {
@@ -47,7 +47,7 @@ p.menuItem{
     /*margin-left: calc(20% + 10px);*/
     padding: 0.3rem;
     font-size: 0.8rem;
-    min-height: calc(100% - 3.5rem);
+    min-height: calc(100% - 6.5rem);
     height: calc(100% - 7rem);
     background: lightyellow;
     overflow:auto;
@@ -78,12 +78,18 @@ p.menuItem{
     display: inline-block;
 }
 
+.nav-button {
+    width: 25%;
+    height: auto;
+}
+
 #nav {
     position: fixed;
     height: 3.5rem;
     width: 100%;
     bottom: 1rem;
-    background-color: green;
+    background-color: blue;
+    color: white;
     margin: 0;
     padding: 0;
 }
@@ -92,6 +98,6 @@ p.menuItem{
     padding-top: 3%;
     min-width: 24%;
     height: 100%;
-    margin: 0;
+    margin: 1vh;
     display: inline-block;
 }
