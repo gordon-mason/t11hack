@@ -14,8 +14,18 @@ function View() {
             mainSection.hidden = true;
             favouriteSection.hidden = true;
         });
+        document.getElementById('ID').addEventListener("click", function(){
+            idSection.hidden = false;
+            mainSection.hidden = true;
+            favouriteSection.hidden = true;
+        });
         document.getElementById('image1').addEventListener("click", function(){
             menuSection.hidden = true;
+            mainSection.hidden = false;
+            favouriteSection.hidden = false;
+        });
+        document.getElementById('imageID').addEventListener("click", function(){
+            idSection.hidden = true;
             mainSection.hidden = false;
             favouriteSection.hidden = false;
         });
