@@ -8,14 +8,20 @@ function View() {
     var favouriteSection = document.getElementById("nav");
     var reviewSection = document.getElementById('reviewSection');
 
+
     this.init = function(callback) {
         var showHome = function(){
+            menuSection.hidden = true;
+            mainSection.hidden = false;
+            favouriteSection.hidden = false;
+            reviewSection.hidden = true;
+        };
+        document.getElementById('home').addEventListener("click", function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
             favouriteSection.hidden = true;
             reviewSection.hidden = true;
-        };
-        document.getElementById('home').addEventListener("click", showHome);
+        });
         document.getElementById('backToMap').addEventListener("click", showHome);
         document.getElementById('image1').addEventListener("click", showHome);
         document.getElementById('imageID').addEventListener("click", function(){
