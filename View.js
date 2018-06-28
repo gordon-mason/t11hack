@@ -13,7 +13,13 @@ function View() {
             mainSection.hidden = true;
             favouriteSection.hidden = true;
         })
+        document.getElementById('image1').addEventListener("click", function(){
+            menuSection.hidden = true;
+            mainSection.hidden = false;
+            favouriteSection.hidden = false;
+        })
     };
+
 
     // Navigation
     this.goToFunction = function(url) {
@@ -23,8 +29,3 @@ function View() {
         };
     };
 }
-
-
-
-
-
