@@ -17,11 +17,11 @@ function View() {
         };
         document.getElementById('home').addEventListener("click", showHome);
         document.getElementById('backToMap').addEventListener("click", showHome);
-        document.getElementById('image1').addEventListener("click", function(){
-            menuSection.hidden = true;
+        document.getElementById('image1').addEventListener("click", showHome);
+        document.getElementById('imageID').addEventListener("click", function(){
+            idSection.hidden = true;
             mainSection.hidden = false;
             favouriteSection.hidden = false;
-            reviewSection.hidden = true;
         });
     };
 
@@ -58,7 +58,6 @@ function View() {
 
     };
 
-
     // Navigation
     this.goToFunction = function(url) {
         return function () {
@@ -66,7 +65,5 @@ function View() {
             window.location.href = url;
         };
     };
-
-
 
 }

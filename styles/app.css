@@ -34,6 +34,8 @@ footer {
     line-height: 1rem;
 }
 
+
+
 p.menuItem{
     margin: 0.2rem;
     font-size: 1rem;
@@ -75,6 +77,12 @@ section{
     display: inline-block;
 }
 
+
+.IDsection img {
+    width: 90%;
+    display: inline-block;
+}
+
 .nav-button {
     width: 25%;
     height: auto;
@@ -95,4 +103,5 @@ section{
     padding-top: 3%;
     width: 20%;
     display: inline-block;
+
 }
