@@ -105,3 +105,9 @@ section{
     display: inline-block;
 
 }
+
+#backToMap {
+    position: fixed;
+    left: 1rem;
+    top: 0.1rem;
+}

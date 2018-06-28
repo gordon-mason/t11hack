@@ -7,6 +7,7 @@ function View() {
     var mainSection = document.getElementById("mainsection");
     var favouriteSection = document.getElementById("nav");
     var reviewSection = document.getElementById('reviewSection');
+    var backToMapButton = document.getElementById('backToMap');
 
 
     this.init = function(callback) {
@@ -15,12 +16,14 @@ function View() {
             mainSection.hidden = false;
             favouriteSection.hidden = false;
             reviewSection.hidden = true;
+            backToMapButton.hidden = true;
         };
         document.getElementById('home').addEventListener("click", function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
             favouriteSection.hidden = true;
             reviewSection.hidden = true;
+            backToMapButton.hidden = true;
         });
         document.getElementById('backToMap').addEventListener("click", showHome);
         document.getElementById('image1').addEventListener("click", showHome);
@@ -61,6 +64,7 @@ function View() {
         mainSection.hidden = true;
         favouriteSection.hidden = false;
         reviewSection.hidden = false;
+        backToMapButton.hidden = false;
 
     };
 
