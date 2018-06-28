@@ -6,42 +6,35 @@ function View() {
     var backToMapButton = document.getElementById('backToMap');
     var IDsection = document.getElementById("idsection");
     var startsection = document.getElementById("startsection");
+    //componentsToHide holds a reference to all components
+    var componentsToHide = [menuSection, mainSection, favouriteSection, reviewSection, backToMapButton, IDsection, startsection];
+    //viewMap holds a reference to all of the components to show for each view
+    var viewMap = [];
+    viewMap["menu"] = [menuSection, favouriteSection, backToMapButton];
+    viewMap["start"] = [startsection];
+    viewMap["IDsection"] = [IDsection, favouriteSection];
+    viewMap["review"] = [reviewSection, favouriteSection, backToMapButton];
+    viewMap["map"] = [mainSection, favouriteSection];
+
+    var switchView = function (viewName) {
+        console.log(componentsToHide);
+        console.log(viewMap);
+        componentsToHide.forEach(function(comp){
+            comp.hidden = true;
+        });
+        viewMap[viewName].forEach(function(comp){ comp.hidden = false; })
+    };
 
     this.init = function(callback) {
+        //set up navigation
+        startsection.addEventListener("click", function(){switchView("map")});
+        document.getElementById('home').addEventListener("click",  function(){switchView("menu")} );
+        document.getElementById('backToMap').addEventListener("click", function(){switchView("map")} );
+        document.getElementById('image1').addEventListener("click",function(){switchView("map")} );
+        document.getElementById('imageID').addEventListener("click", function(){switchView("IDsection")} );
+        document.getElementById('ID').addEventListener("click", function(){switchView("IDsection")} );
 
-        var start = function(){
-            startsection.hidden=false;
-            menuSection.hidden = true;
-            mainSection.hidden = true;
-            favouriteSection.hidden = true;
-            reviewSection.hidden = true;
-            backToMapButton.hidden = true;
-        };
-
-        var showHome = function(){
-            startsection.hidden = true;
-            menuSection.hidden = true;
-            mainSection.hidden = false;
-            favouriteSection.hidden = false;
-            reviewSection.hidden = true;
-            backToMapButton.hidden = true;
-        };
-
-        startsection.addEventListener("click", showHome);
-        document.getElementById('home').addEventListener("click", function(){
-            menuSection.hidden = false;
-            mainSection.hidden = true;
-            //favouriteSection.hidden = true;
-            reviewSection.hidden = true;
-            backToMapButton.hidden = true;
-        });
-        document.getElementById('backToMap').addEventListener("click", showHome);
-        document.getElementById('image1').addEventListener("click", showHome);
-        document.getElementById('imageID').addEventListener("click", function(){
-            idSection.hidden = true;
-            mainSection.hidden = false;
-            favouriteSection.hidden = false;
-        });
+        //handle the submission of a review
         document.getElementById('submit').addEventListener("click", function(e) {
             e.preventDefault();
             const formData = new FormData(document.querySelector("form"));
@@ -52,20 +45,8 @@ function View() {
             });
         });
 
-        document.getElementById('ID').addEventListener("click", function(){
-            idSection.hidden = false;
-            mainSection.hidden = true;
-            //favouriteSection.hidden = true;
-            reviewSection.hidden = true;
-            backToMapButton.hidden = true;
-        });
-        document.getElementById('backToMap').addEventListener("click", showHome);
-        document.getElementById('imageID').addEventListener("click", function(){
-            idSection.hidden = true;
-            mainSection.hidden = false;
-            favouriteSection.hidden = false;
-        });
-        start();
+        //show the start page
+        switchView("start");
     };
 
     this.showReviews = function(restaurantName){
@@ -104,13 +85,5 @@ function View() {
         favouriteSection.hidden = false;
         reviewSection.hidden = false;
         backToMapButton.hidden = false;
-    };
-
-    // Navigation
-    this.goToFunction = function(url) {
-        return function () {
-            console.log(url);
-            window.location.href = url;
-        };
     };
 }
