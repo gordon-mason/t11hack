@@ -3,7 +3,8 @@
   <title>Application</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" type="text/css" href="app.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/app.css"/>
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
 </head>
 <body>
 <header>L(a)unch</header>
@@ -22,13 +23,12 @@
 </section>
 
 <nav id="nav">
-  <div id="favourite1">Symphony</div>
-  <div id="favourite2">Ratings</div>
-  <div id="favourite3">Discounts</div>
-  <div id="home">Home</div>
+  <div id="favourite1" class="nav-button">Symphony</div>
+  <div id="favourite2" class="nav-button">Ratings</div>
+  <div id="favourite3" class="nav-button">Discounts</div>
+  <div id="home" class="nav-button">Home</div>
 </nav>
 
-<footer>&copy; Hackathon 2018</footer>
 <script src="Model.js"></script>
 <script src="View.js"></script>
 <script src="Controller.js"></script>
