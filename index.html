@@ -20,7 +20,7 @@
 
 <!--This is the tiles menu-->
 <section id="menusection" class="menusection" hidden>
-  <img src="http://via.placeholder.com/400x400" />
+  <img id="image1" src="http://via.placeholder.com/400x400" />
   <img src="http://via.placeholder.com/400x400" />
   <img src="http://via.placeholder.com/400x400" />
   <img src="http://via.placeholder.com/400x400" />
@@ -39,13 +39,9 @@
   <div id="reviewHeader">
       Reviews for <i id="restaurantName">Panko</i>
   </div>
-  <div id="starRating" />
+  <div id="starRating"></div>
   <div id="reviews">
-    <div>
-      <img src="http://via.placeholder.com/150x150" />
-      <h3>Great food</h3>
-      <p>I really like this </p>
-    </div>
+
   </div>
 </section>
 
@@ -59,10 +55,11 @@
 </nav>
 
 <footer>&copy; Hackathon 2018</footer>
-<script src="Model.js"></script>
-<script src="View.js"></script>
-<script src="Controller.js"></script>
-<script src="map.js"></script>
+<script type="text/javascript" src="Database.js"></script>
+<script type="text/javascript" src="Model.js"></script>
+<script type="text/javascript" src="View.js"></script>
+<script type="text/javascript" src="Controller.js"></script>
+<script type="text/javascript" src="map.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDdZRfdGzZFrbiTjAUJ3JCtJPEhoywY2s&callback=initialise"></script>
 <script src="map.js"/>
 </body>
