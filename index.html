@@ -22,6 +22,7 @@
   <div id="map"></div>
 </section>
 
+<!--This is the menu section-->
 <section id="menusection" class="menusection" hidden>
   <img id="image1" src="https://is5-ssl.mzstatic.com/image/thumb/Purple115/v4/5f/58/c2/5f58c21a-a729-b0a4-5c7d-6f95f624845f/logo_maps_ios_color-1x_U007emarketing-85-220-0-5.png/246x0w.jpg" />
   <img src="http://via.placeholder.com/400x400" />
@@ -31,6 +32,19 @@
   <img src="http://via.placeholder.com/400x400" />
 </section>
 
+<!--This is the review section -->
+<section id="reviewSection" hidden>
+  <div id="reviewHeader">
+      Reviews for <i id="restaurantName">Panko</i>
+  </div>
+  <div id="starRating"></div>
+  <div id="reviews">
+
+  </div>
+</section>
+
+
+<!--This is the favourites bar - bottom of the page-->
 <nav id="nav">
   <div id="favourite1" class="nav-button"><i class="fas fa-comments"></i>Symfony</div>
   <div id="favourite2" class="nav-button"><i class="fas fa-star"></i>Ratings</div>
@@ -39,10 +53,11 @@
 </nav>
 
 <footer>&copy; Hackathon 2018</footer>
-<script src="Model.js"></script>
-<script src="View.js"></script>
-<script src="Controller.js"></script>
-<script src="map.js"></script>
+<script type="text/javascript" src="Database.js"></script>
+<script type="text/javascript" src="Model.js"></script>
+<script type="text/javascript" src="View.js"></script>
+<script type="text/javascript" src="Controller.js"></script>
+<script type="text/javascript" src="map.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDdZRfdGzZFrbiTjAUJ3JCtJPEhoywY2s&callback=initialise"></script>
 <script src="map.js"/>
 </body>
