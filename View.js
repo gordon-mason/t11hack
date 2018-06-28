@@ -20,8 +20,6 @@ function View() {
         })
     };
 
-
-    // Navigation
     this.goToFunction = function(url) {
         return function () {
             console.log(url);

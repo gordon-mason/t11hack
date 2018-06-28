@@ -1,8 +1,13 @@
+var position = {
+    lat: 55.860682,
+    lng: -4.264069
+}
+
 function initialise() {
-    var myLatlng = new google.maps.LatLng(55.8617, -4.2417);
+    navigator.geolocation.getCurrentPosition(showPosition);
     var mapOptions = {
-        zoom: 15,
-        center: myLatlng
+        zoom: 16,
+        center: position
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
@@ -16,4 +21,9 @@ function placeMarker(location) {
         position: location,
         map: map
     });
+}
+
+function showPosition(event) {
+    position.lat = event.coords.latitude;
+    position.lng = event.coords.longitude;
 }
