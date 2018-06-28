@@ -44,8 +44,8 @@ function View() {
         if (restaurant.reviews) {
             restaurant.reviews.forEach(function (x) {
                 reviews += '<div>\n' +
-                    '      <h3>' + x.user + '</h3>\n' +
-                    '      <p>' + x.description + '</p>\n' +
+                    '      <h3> username: ' + x.user + '</h3>\n' +
+                    '      <p> comment: ' + x.description + '</p>\n' +
                     '    </div>'
             });
         } else {
