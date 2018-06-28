@@ -28,7 +28,7 @@ class Database {
 					latitude: 55.860684,
 					longitude: -4.262097,
 					price: 4,
-					category: ""Buffet",",
+					category: "Buffet",
 					starRating: 3,
 					speed: 3 },
 				{name: "The grill on the Corner",
