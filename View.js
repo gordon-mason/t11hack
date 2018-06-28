@@ -9,15 +9,19 @@ function View() {
     var reviewSection = document.getElementById('reviewSection');
 
     this.init = function(callback) {
-        document.getElementById('home').addEventListener("click", function(){
+        var showHome = function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
             favouriteSection.hidden = true;
-        });
+            reviewSection.hidden = true;
+        };
+        document.getElementById('home').addEventListener("click", showHome);
+        document.getElementById('backToMap').addEventListener("click", showHome);
         document.getElementById('image1').addEventListener("click", function(){
             menuSection.hidden = true;
             mainSection.hidden = false;
             favouriteSection.hidden = false;
+            reviewSection.hidden = true;
         });
     };
 
@@ -46,6 +50,7 @@ function View() {
         //show the star rating and restaurant name:
         document.getElementById('restaurantName').innerHTML = restaurantName;
         document.getElementById('starRating').innerHTML = restaurant.starRating + '/5 stars';
+        //hide other things and show reviews
         menuSection.hidden = true;
         mainSection.hidden = true;
         favouriteSection.hidden = false;
