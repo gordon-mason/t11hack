@@ -12,12 +12,12 @@ function View() {
             menuSection.hidden = false;
             mainSection.hidden = true;
             favouriteSection.hidden = true;
-        })
+        });
         document.getElementById('image1').addEventListener("click", function(){
             menuSection.hidden = true;
             mainSection.hidden = false;
             favouriteSection.hidden = false;
-        })
+        });
     };
 
     this.goToFunction = function(url) {

@@ -1,6 +1,6 @@
 
-class Database {
-	getRestaurantsNearGlasgow = function() {
+function Database() {
+	this.getRestaurantsNearGlasgow = function() {
 		return {
 			restaurants: [
 				{name: "Panko",
@@ -9,7 +9,13 @@ class Database {
 					price: 6,
 					category: "Japanese",
 					starRating: 5,
-					speed: 10},
+					speed: 10,
+					reviews: [
+						{user:'bob',
+						starRating: 4,
+						description: "Great!"}
+					]
+				},
 				{name: "Bar-burrito",
 					latitude: 55.860884,
 					longitude: -4.258916,

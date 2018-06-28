@@ -7,7 +7,14 @@ function initialise() {
     navigator.geolocation.getCurrentPosition(showPosition);
     var mapOptions = {
         zoom: 16,
-        center: position
+        center: position,
+        styles: [ {
+            featureType: "poi.business",
+            elementType: "labels",
+            stylers: [
+                { visibility: "off" }
+            ]
+        }]
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
