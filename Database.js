@@ -36,7 +36,12 @@ function Database() {
 					price: 4,
 					category: "Buffet",
 					starRating: 3,
-					speed: 3 },
+					speed: 3,
+					reviews: [
+						{user:'bob',
+						starRating: 4,
+						description: "Great!"}
+					] },
 				{name: "The grill on the Corner",
 					latitude: 55.860917,
 					longitude: -4.259839,
