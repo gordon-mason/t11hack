@@ -9,7 +9,6 @@ function View() {
     var reviewSection = document.getElementById('reviewSection');
     var backToMapButton = document.getElementById('backToMap');
 
-
     this.init = function(callback) {
         var showHome = function(){
             menuSection.hidden = true;
@@ -35,8 +34,11 @@ function View() {
         document.getElementById('submit').addEventListener("click", function(e) {
             e.preventDefault();
             const formData = new FormData(document.querySelector("form"));
-            console.log(formData.get("rating"));
-            console.log(formData.get("comment"));
+            globalDatabase.updateRestaurantsNearGlasgow(            {
+                name: document.getElementById("restaurantName").innerHTML,
+                rating: formData.get("rating"),
+                comment: formData.get("comment")
+            });
         });
     };
 
@@ -51,7 +53,7 @@ function View() {
         //create a review div for each review
         if (restaurant.reviews) {
             restaurant.reviews.forEach(function (x) {
-                reviews += '<div class="reviewCard">\n' +
+                reviews += '<div class="panel panel-default">\n' +
                     '      <h3> username: ' + x.user + '</h3>\n' +
                     '      <p> comment: ' + x.description + '</p>\n' +
                     '    </div>'

@@ -3,12 +3,15 @@
   <title>L(a)unch</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" type="text/css" href="styles/app.css"/>
   <link rel="stylesheet" type="text/css" href="styles/normalize.css"/>
   <link rel="stylesheet"
         href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
         integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
         crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles/app.css"/>
   <link rel="icon" sizes="192x192" href="pizza.jpg"/>
   <link rel="apple-touch-icon" href="pizza.jpg"/>
   <link rel="shortcut icon" href="pizza.jpg" type="image/x-icon"/>
@@ -46,23 +49,29 @@
 
 <!--This is the review section -->
 <section id="reviewSection" hidden>
-  <div id="reviewHeader">
-      Reviews for <i id="restaurantName">Panko</i>
-  </div>
-  <div id="starRating"></div>
-  <div id="reviews"></div>
-  <form action="" method="POST">
-    <h3>Please leave your review and comments!</h3>
-    <select name="rating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <textarea name="comment"></textarea>
-    <button type="submit" id="submit">Submit</button>
-  </form>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div id="reviewHeader ">
+        Reviews for <i id="restaurantName">Panko</i>
+      </div>
+      <div id="starRating"></div>
+      <div id="reviews"></div>
+      <input hidden>
+      <form action="" method="POST">
+        <h3>Please leave your review and comments!</h3>
+        <select name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <textarea name="comment"></textarea>
+        <button type="submit" id="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+    </div>
 </section>
 
 
