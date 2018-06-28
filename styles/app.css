@@ -83,6 +83,10 @@ section{
     display: inline-block;
 }
 
+.gm-style-mtc {
+  display: none;
+}
+
 .nav-button {
     width: 25%;
     height: auto;
@@ -108,8 +112,8 @@ section{
 
 #backToMap {
     position: fixed;
-    left: 0.8rem;
-    top: 0.25rem;
+    left: 1rem;
+    top: 0.1rem;
 }
 
 #starRating {

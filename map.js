@@ -14,7 +14,8 @@ function initialise() {
             stylers: [
                 { visibility: "off" }
             ]
-        }]
+        }],
+        mapTypeControlOption: false
     };
 
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
