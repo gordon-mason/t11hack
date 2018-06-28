@@ -83,6 +83,10 @@ section{
     display: inline-block;
 }
 
+.gm-style-mtc {
+  display: none;
+}
+
 .nav-button {
     width: 25%;
     height: auto;
