@@ -8,22 +8,22 @@ function View() {
     var favouriteSection = document.getElementById("nav");
     var reviewSection = document.getElementById('reviewSection');
 
+
     this.init = function(callback) {
+        var showHome = function(){
+            menuSection.hidden = true;
+            mainSection.hidden = false;
+            favouriteSection.hidden = false;
+            reviewSection.hidden = true;
+        };
         document.getElementById('home').addEventListener("click", function(){
             menuSection.hidden = false;
             mainSection.hidden = true;
             favouriteSection.hidden = true;
+            reviewSection.hidden = true;
         });
-        document.getElementById('ID').addEventListener("click", function(){
-            idSection.hidden = false;
-            mainSection.hidden = true;
-            favouriteSection.hidden = true;
-        });
-        document.getElementById('image1').addEventListener("click", function(){
-            menuSection.hidden = true;
-            mainSection.hidden = false;
-            favouriteSection.hidden = false;
-        });
+        document.getElementById('backToMap').addEventListener("click", showHome);
+        document.getElementById('image1').addEventListener("click", showHome);
         document.getElementById('imageID').addEventListener("click", function(){
             idSection.hidden = true;
             mainSection.hidden = false;
@@ -56,13 +56,13 @@ function View() {
         //show the star rating and restaurant name:
         document.getElementById('restaurantName').innerHTML = restaurantName;
         document.getElementById('starRating').innerHTML = restaurant.starRating + '/5 stars';
+        //hide other things and show reviews
         menuSection.hidden = true;
         mainSection.hidden = true;
         favouriteSection.hidden = false;
         reviewSection.hidden = false;
 
     };
-
 
     // Navigation
     this.goToFunction = function(url) {
@@ -71,7 +71,5 @@ function View() {
             window.location.href = url;
         };
     };
-
-
 
 }
