@@ -40,7 +40,10 @@ function Database() {
 					reviews: [
 						{user:'bob',
 						starRating: 4,
-						description: "Great!"}
+						description: "Great!"},
+						{user:'dombro',
+						starRating: 4,
+						description: "not really!"}
 					] },
 				{name: "The grill on the Corner",
 					latitude: 55.860917,
