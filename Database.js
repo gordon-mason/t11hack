@@ -88,7 +88,7 @@ function Database() {
         restaurants.restaurants.forEach(function(rest) {
         	if(review.name === rest.name) {
         		rest.reviews.push({
-					user: "JPMorgan Employee",
+					user: "Employee",
                     starRating: review.rating,
                     description: review.comment
         		});
